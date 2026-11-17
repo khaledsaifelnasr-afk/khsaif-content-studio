@@ -1,0 +1,13 @@
+# Libraries are installed with npm ci in the template folder
+node_modules/
+
+# Reel media stays local; the scene files and credits are kept
+Reels/**/assets/
+Reels/**/qa/
+Reels/**/*.mp4
+Reels/**/.reel.resolved.json
+Reels/**/.closing.json
+
+# Local scratch
+.playwright-mcp/
+*.tmp
