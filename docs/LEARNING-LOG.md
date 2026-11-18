@@ -63,3 +63,28 @@ Limit: creators.instagram.com is blocked by this cloud session's network and by 
 
 - **Faces**: ABCD and Shorts guidance both say people, and especially a real person speaking to camera, raise attention and trust. Khaled decided on 18 Nov 2026 not to appear on camera for now; the skill carries the human element through his voice, name and credentials. Revisit later.
 - **Long-form YouTube**: the skill covers short video only. If Khaled wants long videos (for example 6 to 10 minute explainers of UAE Corporate Tax topics), the packaging lessons above would be the base of a separate skill.
+
+## 4. Realistic AI presenter (studied 18 Nov 2026; idea dropped by Khaled the same day)
+
+Khaled decided not to use an AI presenter. The disclosure rules below still matter because every reel uses a realistic AI voice.
+
+Khaled will not appear on camera for now and asked whether a realistic AI presenter can stand in. Sources read: YouTube Help "Disclosing use of GenAI content" (support.google.com/youtube/answer/14328491) and the YouTube blog announcement (18 Mar 2024); Meta's disclosure requirement as quoted from its Transparency Center and Help Centre (Partnership on AI case study by Meta, and summaries checked Oct–Nov 2026); ElevenLabs model guides for `creatify-aurora` and the lip-sync family (`bytedance-omnihuman-v1.5`, `minimax-h3-max-lipsync`, `sync-lipsync-v3`, `veed-fabric-1-fast`); practitioner guides on AI talking heads (blurstudio.ai, markmeets.com, domer.io, diyai.io, Oct–Nov 2026).
+
+### Rules (platform requirements, not style)
+
+- **Disclosure is required.** YouTube requires "AI use: Yes" for realistic content, explicitly including a synthetically generated voice narrating a video; for finance topics the label can show on the player. Meta requires the AI label on Instagram for photorealistic video **or realistic-sounding audio**, and names "a reel narrated with a realistic AI voiceover" as an example. Our ElevenLabs voice-overs already fall under this, presenter or not. Disclosing does not limit reach or monetisation on YouTube; not disclosing can lead to penalties.
+- **The presenter must not pass as Khaled or any real person.** YouTube lists "making it appear as if someone gave advice they did not actually give" as disclosable, and a fake face presented as a named professional misleads clients. The presenter is a fictional SEN presenter, introduced as such, and never says "I am Khaled". Its face must not resemble a real person.
+- **Same for the voice.** An ElevenLabs voice is not Khaled's voice, so the script never puts "أنا خالد" in its mouth. A clone of Khaled's own voice, made with his consent, would be the only exception.
+
+### How to make it look real (ElevenLabs models available on the account)
+
+- **Audio first.** Lock the voice-over (step 6), then animate the face to it. Lip-sync breaks when the video is planned before the final audio.
+- **One fixed portrait.** Generate one front-facing, evenly lit, neutral-expression portrait (9:16, shoulders up, plain Midnight or soft studio background, Gulf business attire), approve it once, and reuse the same file in every reel so the presenter stays consistent. No text in the image (lip-sync models morph it).
+- **Models.** `creatify-aurora` (made for studio talking heads, takes a framing prompt, `prompt_guidance` 1 to start); `bytedance-omnihuman-v1.5` (still image + audio, realistic, measured earlier at about 3,025 credits for 3 s); `minimax-h3-max-lipsync` (5–14.8 s of speech, no prompt, use 480p for drafts); `heygen-avatar4`. Always price with `estimate_only` first.
+- **Short windows.** Use the presenter only for the hook (3–5 s) and the call to action (3–5 s), and cut to b-roll, cards and captions in between. Avatars hold up in short takes; long takes expose artefacts.
+- **Script for the ear.** Short clauses, numbers written as they should be spoken, a pause between sentences, moderate speed. Test the hardest line (a number plus a law name) on a short draft before the full clip.
+- **Check.** Watch the mouth on fast consonants, frozen eyes, repeated gestures, and voice–face match (age, tone). If a viewer's first question is "is this a real person?", it is not ready.
+
+### Status
+
+Dropped on 18 Nov 2026: no AI presenter, no portrait or lip-sync test. Kept here only as reference.
