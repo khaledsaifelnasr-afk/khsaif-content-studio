@@ -7,7 +7,7 @@ Content production for Khaled's personal brand website **khsaif.com** (brand mar
 ## Specific Instructions
 
 - **Reels:** use the `reel-studio` skill (C:\Users\printer\.claude\skills\reel-studio). Its 15-step chain is the standard: Metricool data, brief, script with legal check, scene plan, Neuro Marketer review and approval of cost, then voice, visuals, render, check, package and schedule.
-- **Main reference session:** the Claude Code session "Reel Studio · الجلسة الأساسية" holds the full history of how the skill was built and tested.
+- **Main reference session:** the Claude Code session "Content Studio مرجع المهارة" (https://claude.ai/code/session_01L32eAjZm9LvXAvqYw2qnWD, from 18 Nov 2026) is the main reference for the `reel-studio` skill: decisions, changes and approvals about the skill are made and recorded there. The earlier session "Reel Studio · الجلسة الأساسية" is kept as the archive of how the skill was first built and tested.
 - **Output folder:** save each reel in `Reels/<yyyy-mm-dd-slug>/` inside this folder. Earlier reels are in the workspace's top-level `Reels/` folder.
 - **Brand source:** the parent folder `khsaif Website` — `handoffs/SEN-Visual-Identity-Guideline-v3.1.pdf`, `handoffs/logo/v2/` (logos and the intro videos), `handoffs/brand-refresh/colour-system.md`, and `PROJECT.md` for verified facts and credentials. Read those instead of guessing.
 - **Website link:** every reel and post points to khsaif.com or WhatsApp +971 50 957 0963. Website changes themselves are done from the parent folder under its own rules.
