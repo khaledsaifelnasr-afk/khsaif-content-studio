@@ -15,6 +15,7 @@ Content production for Khaled's personal brand website **khsaif.com** (brand mar
 - **Brand source:** the parent folder `khsaif Website` — `handoffs/SEN-Visual-Identity-Guideline-v3.1.pdf`, `handoffs/logo/v2/` (logos and the intro videos), `handoffs/brand-refresh/colour-system.md`, and `PROJECT.md` for verified facts and credentials. Read those instead of guessing.
 - **Website link:** every reel and post points to khsaif.com or WhatsApp +971 50 957 0963. Website changes themselves are done from the parent folder under its own rules.
 - **Connected tools:** ElevenLabs (paid Starter plan: voice, music, generated images and clips), Unsplash, Playwright, HyperFrames, Metricool (Instagram sen_auditing_firm and the Saif El Nasr YouTube channel), Canva, Adobe, Remotion through the skill's template.
+- **Merging:** Khaled gave standing approval on 18 Nov 2026 to merge this repository's pull requests to `main` without asking each time, once the work he asked for is done. Weekly radar PRs are proposals and are not merged until he approves their content.
 - **Spending:** show the estimated credits and get Khaled's approval before any generation. Never publish or schedule without his explicit yes.
 - **Do not use:** Qwen video (its terms are non-commercial only) or clips from transitionalhooks.com (personal, non-commercial use only).
 - **Language:** reply in Egyptian Arabic.
