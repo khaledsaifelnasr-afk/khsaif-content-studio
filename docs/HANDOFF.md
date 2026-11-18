@@ -17,7 +17,7 @@ Written 18 Nov 2026 from the Claude Code session "Reel Studio · الجلسة ا
 | YouTube (firm channel) | "Saif El Nasr", channel id `UC8NoAlvfepbODUW953D3LpA`, Google account saif@khsaif.com |
 | YouTube (personal, do not use for firm content) | "khaled saif" @khaledsaif2002, Google account khaledsaifelnasr@gmail.com |
 | Metricool brand | `sen_auditing_firm`, blogId `7753759`, timezone `Asia/Dubai`, linked to the Instagram and the firm YouTube channel |
-| ElevenLabs | Starter plan ($6/month, 30,000 credits/month, commercial licence for speech and music) |
+| ElevenLabs | Starter plan ($6/month, 40,000 credits/month as read from the account on 18 Nov 2026, commercial licence for speech and music; resets on the 30th) |
 | GitHub | `khaledsaifelnasr-afk` |
 
 Best posting time from Metricool (Instagram): around 10:00 Dubai time, strongest on Wednesday and Friday.
@@ -113,10 +113,13 @@ Every new tax claim must be verified again against current law, with the source 
 1. ~~Late filing penalty reel~~: cancelled by Khaled on 18 Nov 2026. The stamp scene will not be rebuilt and no cover is needed. Its local folder on his PC can be deleted or kept as an archive.
 2. Music on the published intro came from the old video; its licence was never checked.
 3. An older Short with the old brand may still be on the firm YouTube channel (`kj7Neu3RK-A`); Khaled may hide it.
-4. ~~Magnific~~: not in the connector directory or among the installed connectors (18 Nov 2026). Khaled approved dropping it: visuals now go Unsplash → Adobe Stock → ElevenLabs. Kling (video) may be added later if Khaled subscribes. ElevenLabs still needs reconnecting with full access so the credit balance can be read.
+4. ~~Magnific~~: not in the connector directory or among the installed connectors (18 Nov 2026). Khaled approved dropping it: visuals now go Unsplash → Adobe Stock → ElevenLabs. Kling (video) may be added later if Khaled subscribes. ElevenLabs was reconnected and its credit balance is now readable.
 5. The brand reference files of the website (`khsaif Website/handoffs/`, `PROJECT.md`) are on Khaled's PC only, not in this repository. A cloud session has the skill's `brand/` folder (guideline PDF, closing clips, mark, tick) but not those files.
 
 ## 9. Working rules
+
+- Learning: `docs/LEARNING-LOG.md` holds what was learned from official Google, YouTube and Instagram guidance (18 Nov 2026) and the nine changes it brought to the skill: brand named by voice in the first 5 s, two shots in the first 5 s, CTA said and shown, a send test in the brief, platform metrics at step 0, trial reels, a music licence rule, problem-first titles, and renderer checks (3-minute stop, late first cut, long reel with music).
+- Khaled does not appear on camera for now (decided 18 Nov 2026).
 
 - Show the estimated credits and get Khaled's approval before any generation. Never call a generate tool twice to retry.
 - Never publish or schedule without his explicit yes; show the exact text, account and time first.
@@ -130,7 +133,7 @@ Free, read-only checks; no credits spent.
 
 | Tool | Result |
 |---|---|
-| ElevenLabs | Works (Arabic voices listed). Usage/credit balance call refused: "requires additional permissions"; Khaled to reconnect it with full access |
+| ElevenLabs | Works. After Khaled reconnected it, `account_get_usage` returns the balance: Starter, 8,917 of 40,000 credits used, 31,083 left, resets 30 Nov 2026 15:04 Dubai |
 | Metricool | Works: brand `sen_auditing_firm` (7753759), Instagram and firm YouTube linked, Asia/Dubai |
 | Unsplash | Works (user saifelnasr) |
 | Canva | Works (one Brand Kit) |
