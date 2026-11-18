@@ -35,7 +35,13 @@ if (fullFfmpeg) {
     'aresample=48000,asetnsamples=2400,astats=metadata=1:reset=1,ametadata=print:key=lavfi.astats.Overall.RMS_level',
     '-f', 'null', '-'], {encoding: 'utf8'}).stderr;
   const frames = [...out.matchAll(/RMS_level=(-?[0-9.]+)/g)].map((m) => parseFloat(m[1])).filter(Number.isFinite).sort((a, b) => a - b);
-  if (frames.length) noiseFloor = Math.round(Math.min(-20, Math.max(-80, frames[Math.floor(frames.length * 0.1)])));
+  if (frames.length) {
+    // In a take with few pauses the quietest frames are still speech, so never
+    // put the noise level closer than 18 dB under the loud speech (90th percentile).
+    const quiet = frames[Math.floor(frames.length * 0.1)];
+    const loud = frames[Math.floor(frames.length * 0.9)];
+    noiseFloor = Math.round(Math.min(-20, Math.max(-80, Math.min(quiet, loud - 18))));
+  }
 }
 
 const gateThreshold = Math.pow(10, (noiseFloor + 6) / 20).toFixed(4);
