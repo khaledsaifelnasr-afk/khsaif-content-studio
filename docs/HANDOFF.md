@@ -98,7 +98,7 @@ Lesson: in a chained ElevenLabs flow, run only the last node; running the upstre
 | Brand intro, rebuilt in the new brand | `Reels/2026-11-11-brand-intro-en` | Done, not published |
 | Brand intro, original video with only the logos swapped, name and site under the closing, clear first frame | `Reels/2026-11-11-brand-intro-logo-swap` (plus `cover.png`) | **Published**: Instagram reel on sen_auditing_firm; YouTube Short https://www.youtube.com/shorts/RkLJwgcBj_g (via Metricool) |
 | Talking falcon test ("هلا هلا بالعزيز الغالي") | `Reels/2026-11-13-hala-hala-test` | Test only, about 3,499 credits |
-| Late filing penalty, anticipation hook | `Reels/2026-11-16-late-filing-penalty` | **Open** (see section 8) |
+| Late filing penalty, anticipation hook | `Reels/2026-11-16-late-filing-penalty` | **Cancelled** by Khaled on 18 Nov 2026; not to be finished |
 
 Reel media is not in this repository (see `.gitignore`); only `reel.json` and credits are kept for reels saved under this repository's `Reels/`.
 
@@ -110,10 +110,10 @@ Every new tax claim must be verified again against current law, with the source 
 
 ## 8. Open items
 
-1. **Late filing penalty reel:** Khaled rejected the AI stamp clip (landscape, blurry once cropped, garbled LATE) and the "غرامة تأخير" label laid over it. Recommended: rebuild the hook and payoff as a free animated stamp scene in the Remotion template (a clear tax return document, a stamp descending and stopping for the hook, then slamming and printing "غرامة تأخير"). Alternative: a new vertical AI clip with a blank stamp face (about 1,450 credits). Waiting for his choice.
-2. No Canva cover yet for that reel.
-3. Music on the published intro came from the old video; its licence was never checked.
-4. An older Short with the old brand may still be on the firm YouTube channel (`kj7Neu3RK-A`); Khaled may hide it.
+1. ~~Late filing penalty reel~~: cancelled by Khaled on 18 Nov 2026. The stamp scene will not be rebuilt and no cover is needed. Its local folder on his PC can be deleted or kept as an archive.
+2. Music on the published intro came from the old video; its licence was never checked.
+3. An older Short with the old brand may still be on the firm YouTube channel (`kj7Neu3RK-A`); Khaled may hide it.
+4. **Magnific:** not in the claude.ai connector directory and no longer among the installed connectors (checked 18 Nov 2026). Khaled asked to try setting it up again and, if that fails, choose a different tool. See section 10.
 5. The brand reference files of the website (`khsaif Website/handoffs/`, `PROJECT.md`) are on Khaled's PC only, not in this repository. A cloud session has the skill's `brand/` folder (guideline PDF, closing clips, mark, tick) but not those files.
 
 ## 9. Working rules
@@ -123,3 +123,23 @@ Every new tax claim must be verified again against current law, with the source 
 - Publishing paths that worked: Instagram through Claude in Chrome (the profile there is signed in to Instagram); YouTube through Metricool with the video hosted at a public URL (it was briefly hosted on khsaif.com through the Hostinger connector, then deleted). The Chrome profile that Claude controls is signed in to the personal Google account, not saif@khsaif.com.
 - Unsplash: one concept per search, `download_asset` for files, check each photo for logos and identifiable people, record credits.
 - Commit and push after changing the skill, template or instructions.
+
+## 10. Cloud session check (18 Nov 2026, session "Content Studio مرجع المهارة")
+
+Free, read-only checks; no credits spent.
+
+| Tool | Result |
+|---|---|
+| ElevenLabs | Works (Arabic voices listed). Usage/credit balance call refused: "requires additional permissions"; Khaled to reconnect it with full access |
+| Metricool | Works: brand `sen_auditing_firm` (7753759), Instagram and firm YouTube linked, Asia/Dubai |
+| Unsplash | Works (user saifelnasr) |
+| Canva | Works (one Brand Kit) |
+| Adobe for creativity | Works (init) |
+| HyperFrames | Works (no projects yet) |
+| Playwright | Works (Chromium launches) |
+| Remotion template | Works after `npm ci` in `template/`; a still of the `Closing` composition rendered correctly |
+| Magnific | Not available |
+| Recraft (connected, not in the chain) | Free plan, 60 credits |
+| Kling (connected, not in the chain) | Free (NORMAL) membership, 0 credits |
+
+Cloud rendering notes: pass `--browser-executable=/opt/pw-browsers/chromium` so Remotion uses the installed Chromium instead of downloading one. A raw `remotion still` of `Closing` needs `public/outro.mp4`; `scripts/render.mjs` sets this up for a real reel.

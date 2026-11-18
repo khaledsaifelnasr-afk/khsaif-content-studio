@@ -20,7 +20,7 @@ Content production for Khaled's personal brand website **khsaif.com** (brand mar
 ## Things to Remember
 
 - Tax facts in any script must be verified against the current UAE or KSA law and the source shown to Khaled before production.
-- The late filing penalty reel (Reels/2026-11-16-late-filing-penalty in the workspace root) is waiting on a rebuilt stamp scene: Khaled rejected the AI clip and the label over it.
+- The late filing penalty reel (Reels/2026-11-16-late-filing-penalty in the workspace root) was cancelled by Khaled on 18 Nov 2026. Do not rebuild it.
 
 ---
 
