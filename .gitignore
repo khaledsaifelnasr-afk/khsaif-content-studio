@@ -11,3 +11,8 @@ Reels/**/.closing.json
 # Local scratch
 .playwright-mcp/
 *.tmp
+
+# Khaled's voice recordings stay local
+Reels/**/*.mp3
+Reels/**/*.m4a
+Reels/**/*.wav
