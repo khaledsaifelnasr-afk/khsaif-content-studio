@@ -119,7 +119,7 @@ Every new tax claim must be verified again against current law, with the source 
 ## 9. Working rules
 
 - Learning: `docs/LEARNING-LOG.md` holds what was learned from official Google, YouTube and Instagram guidance (18 Nov 2026) and the nine changes it brought to the skill: brand named by voice in the first 5 s, two shots in the first 5 s, CTA said and shown, a send test in the brief, platform metrics at step 0, trial reels, a music licence rule, problem-first titles, and renderer checks (3-minute stop, late first cut, long reel with music).
-- Khaled does not appear on camera for now (decided 18 Nov 2026). A realistic, disclosed AI presenter is being considered; see `docs/LEARNING-LOG.md` section 4 for the rules and the proposed test.
+- Khaled does not appear on camera for now (decided 18 Nov 2026). An AI presenter was considered and dropped the same day; no presenter in reels.
 - Weekly radar: scheduled task "Reel Studio weekly radar", Thursdays 10:43 Dubai, opens a docs-only PR under `docs/radar/`. Created without connectors (the creating session could not pass them); Khaled should add ElevenLabs, Firecrawl and Exa to it from claude.ai so it can read the model list.
 
 - Show the estimated credits and get Khaled's approval before any generation. Never call a generate tool twice to retry.

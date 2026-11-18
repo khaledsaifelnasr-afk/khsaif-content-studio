@@ -64,7 +64,9 @@ Limit: creators.instagram.com is blocked by this cloud session's network and by 
 - **Faces**: ABCD and Shorts guidance both say people, and especially a real person speaking to camera, raise attention and trust. Khaled decided on 18 Nov 2026 not to appear on camera for now; the skill carries the human element through his voice, name and credentials. Revisit later.
 - **Long-form YouTube**: the skill covers short video only. If Khaled wants long videos (for example 6 to 10 minute explainers of UAE Corporate Tax topics), the packaging lessons above would be the base of a separate skill.
 
-## 4. Realistic AI presenter (studied 18 Nov 2026)
+## 4. Realistic AI presenter (studied 18 Nov 2026; idea dropped by Khaled the same day)
+
+Khaled decided not to use an AI presenter. The disclosure rules below still matter because every reel uses a realistic AI voice.
 
 Khaled will not appear on camera for now and asked whether a realistic AI presenter can stand in. Sources read: YouTube Help "Disclosing use of GenAI content" (support.google.com/youtube/answer/14328491) and the YouTube blog announcement (18 Mar 2024); Meta's disclosure requirement as quoted from its Transparency Center and Help Centre (Partnership on AI case study by Meta, and summaries checked Oct–Nov 2026); ElevenLabs model guides for `creatify-aurora` and the lip-sync family (`bytedance-omnihuman-v1.5`, `minimax-h3-max-lipsync`, `sync-lipsync-v3`, `veed-fabric-1-fast`); practitioner guides on AI talking heads (blurstudio.ai, markmeets.com, domer.io, diyai.io, Oct–Nov 2026).
 
@@ -83,8 +85,6 @@ Khaled will not appear on camera for now and asked whether a realistic AI presen
 - **Script for the ear.** Short clauses, numbers written as they should be spoken, a pause between sentences, moderate speed. Test the hardest line (a number plus a law name) on a short draft before the full clip.
 - **Check.** Watch the mouth on fast consonants, frozen eyes, repeated gestures, and voice–face match (age, tone). If a viewer's first question is "is this a real person?", it is not ready.
 
-### Proposed next step (needs Khaled's approval and credits)
+### Status
 
-1. Generate 3 candidate presenter portraits (about 190 credits each with `gpt-image-2.5-sunburst`, about 570 in total) for Khaled to pick one.
-2. A 5-second lip-sync test of the chosen portrait on one line of an existing voice, priced first with `estimate_only` (expected roughly 1,500–3,000 credits depending on the model).
-3. If he approves the result, add an `presenter` scene type to the template and a section to the skill.
+Dropped on 18 Nov 2026: no AI presenter, no portrait or lip-sync test. Kept here only as reference.
