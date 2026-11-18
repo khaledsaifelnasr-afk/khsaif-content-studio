@@ -16,7 +16,7 @@ Confirm the tools are in this session. ElevenLabs is required: if it is missing,
 | Metricool connector | Past reel performance and best posting time; scheduling on approval | 0, 14 |
 | Transitional Hooks (transitionalhooks.com, via Playwright) | Hook and transition ideas only, never clips in the reel | 1 |
 | Neuro Marketer skill | Persuasion review before any spend, and the hook check | 4, 12 |
-| Khaled's own voice recording, cleaned by `scripts/clean-voice.mjs` | Voice-over | 6 |
+| Khaled's voice clone "Saif" on ElevenLabs, or his own recording cleaned by `scripts/clean-voice.mjs` | Voice-over | 6 |
 | ElevenLabs connector | Caption timing, music, sound effects, generated visuals; AI voice only as a fallback | 6, 7, 8, 10 |
 | Unsplash connector | Real photos, first choice | 8 |
 | Adobe connector (Adobe Express) | Licensed stock (second choice for visuals), speech clean-up, extra formats | 8, 13 |
@@ -45,7 +45,11 @@ Confirm the tools are in this session. ElevenLabs is required: if it is missing,
    - Its integrity gate is a hard block: no invented deadlines, scarcity, client numbers or testimonials. Legal accuracy from step 2 outranks any persuasion fix.
    Show the scores, the changes made, the script, the plan and the estimated credits together for one approval.
 5. **Folder.** Create `Reels/<yyyy-mm-dd-slug>/assets/` in the workspace.
-6. **Voice: Khaled's own recording (default since 18 Nov 2026).** Khaled records the approved script himself; he does not appear on camera. Send him the script split into short lines and these tips: a quiet room with soft furnishings, phone 15 to 20 cm from the mouth and slightly to the side, the same distance throughout, a 1-second pause before the first word and between sentences, re-say a line if he stumbles. Any format the phone saves (m4a, wav, mp3, ogg) works.
+6. **Voice: Khaled's voice clone (default since 18 Nov 2026).** Use ElevenLabs voice "Saif" (`voice_id` `kLbuFHpWQBLmZ4IB3Yp9`), an Instant Voice Clone Khaled made from his own cleaned recordings. Price with `creative_generate_speech` `estimate_only: true`, then generate with `generations_count: 1` and `model_id: "eleven_v4"` (try `eleven_multilingual_v2` if the timbre drifts from his real voice). It speaks Egyptian Arabic, Gulf/Emirati Arabic (write the script in that dialect) and English. Download the file from `elevenlabsusercontent.com` into `assets/voice.mp3`. The voice speaks as Khaled in the first person, since it is his own voice.
+   - Disclosure: YouTube does not require it for a clone of the creator's own voice. Instagram asks for its AI label on realistic AI audio; follow Khaled's recorded decision in `docs/HANDOFF.md`.
+   - Measured on 18 Nov 2026: the clone's pitch came out higher than his real recordings (median about 115 Hz against about 82 Hz). Khaled judges by ear; if it does not sound like him, add more of his recordings to the clone in ElevenLabs.
+
+   **Alternative: Khaled's own recording.** Khaled records the approved script himself; he does not appear on camera. Send him the script split into short lines and these tips: a quiet room with soft furnishings, phone 15 to 20 cm from the mouth and slightly to the side, the same distance throughout, a 1-second pause before the first word and between sentences, re-say a line if he stumbles. Any format the phone saves (m4a, wav, mp3, ogg) works.
    - Save the original untouched as `assets/voice-raw.<ext>`, then clean it for free:
      ```bash
      node "$HOME/.claude/skills/reel-studio/scripts/clean-voice.mjs" "<reel>/assets/voice-raw.m4a" "<reel>/assets/voice.mp3"
