@@ -30,6 +30,10 @@ const checkReel = ({scenes, captions = []}) => {
     if (s.src && !existsSync(path.join(reelDir, 'assets', s.src))) problems.push(`Missing asset ${s.src}`);
   });
   if (scenes[0]?.start !== 0) problems.push('The first scene must start at 0');
+  // Two or more shots in the first 5 seconds (Google ABCD, Attract).
+  if (scenes.length > 1 && scenes[0].end > 2.5) {
+    console.warn(`WARNING: the first cut comes at ${scenes[0].end.toFixed(1)}s; cut the hook by 2.5s so two shots land in the first 5s`);
+  }
   const lastEnd = scenes[scenes.length - 1]?.end ?? 0;
   const lastWord = captions[captions.length - 1]?.end ?? 0;
   if (lastWord > lastEnd + 0.05) problems.push('Captions run past the last scene');
@@ -57,8 +61,10 @@ if (props.watermark === undefined) props.watermark = brandFile('sen-mark-reverse
 const browser = [
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
+  // Claude Code cloud sessions ship this Chromium with Playwright.
+  '/opt/pw-browsers/chromium',
 ].find((b) => existsSync(b));
-// No local browser (cloud or Linux): Remotion downloads its own headless Chrome.
+// No local browser at all: Remotion downloads its own headless Chrome.
 
 // Default closing: the three-tick logo clip with the name and website set under it.
 if (props.outro === undefined) {
@@ -90,6 +96,17 @@ if (props.outro) {
     '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0',
   ]);
   props.outroSeconds = parseFloat(probe.trim().split(/\s+/).pop());
+}
+
+// Neither Instagram nor YouTube recommends vertical videos over 3 minutes.
+const bodySeconds = props.scenes[props.scenes.length - 1]?.end ?? 0;
+const totalSeconds = bodySeconds + (props.outroSeconds ?? 0);
+if (totalSeconds > 180) {
+  throw new Error(`The reel runs ${totalSeconds.toFixed(1)}s with its closing; keep it at 3 minutes or less`);
+}
+// A YouTube Short over 1 minute with any copyright claim is blocked worldwide.
+if (totalSeconds > 60 && props.music) {
+  console.warn(`WARNING: the reel runs ${totalSeconds.toFixed(1)}s with music; use only ElevenLabs music or the YouTube Audio Library`);
 }
 
 const built = path.join(reelDir, '.reel.resolved.json');

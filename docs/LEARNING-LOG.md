@@ -1,6 +1,6 @@
 # Learning log: short video and YouTube
 
-Free, official sources studied in full on 18 Nov 2026 in the session "Content Studio مرجع المهارة", at Khaled's request. Each lesson is followed by what it means for SEN. The proposed changes to the `reel-studio` skill are in section 3 and wait for Khaled's approval; nothing in the skill has been changed from this log yet.
+Free, official sources studied in full on 18 Nov 2026 in the session "Content Studio مرجع المهارة", at Khaled's request. Each lesson is followed by what it means for SEN. The changes to the `reel-studio` skill in section 3 were approved by Khaled and applied on 18 Nov 2026 (SKILL.md and scripts/render.mjs); a test render in the cloud confirmed the new checks.
 
 ## 1. Sources
 
@@ -45,7 +45,7 @@ Limit: creators.instagram.com is blocked by this cloud session's network and by 
 - Vertical or square videos up to **3 minutes** are Shorts. A Short **over 1 minute with any active copyright claim is blocked worldwide**. Music for anything over 60 s must be our own (ElevenLabs, commercial licence) or from the YouTube Audio Library.
 - This links to an open item in `HANDOFF.md`: the published brand intro reuses music from the old video whose licence was never checked.
 
-## 3. Proposed changes to `reel-studio` (waiting for approval)
+## 3. Changes to `reel-studio` (approved and applied 18 Nov 2026)
 
 | # | Change | Why | Where |
 |---|---|---|---|
@@ -61,5 +61,5 @@ Limit: creators.instagram.com is blocked by this cloud session's network and by 
 
 ### For discussion, not proposed as rules
 
-- **Faces**: ABCD and Shorts guidance both say people, and especially a real person speaking to camera, raise attention and trust. Our brand rule bans stock photos of people and the skill does not use filmed footage. A short clip of Khaled himself (hook or closing, 3 to 5 s) would be the strongest option the sources point to; it is Khaled's decision.
+- **Faces**: ABCD and Shorts guidance both say people, and especially a real person speaking to camera, raise attention and trust. Khaled decided on 18 Nov 2026 not to appear on camera for now; the skill carries the human element through his voice, name and credentials. Revisit later.
 - **Long-form YouTube**: the skill covers short video only. If Khaled wants long videos (for example 6 to 10 minute explainers of UAE Corporate Tax topics), the packaging lessons above would be the base of a separate skill.

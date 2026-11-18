@@ -118,6 +118,9 @@ Every new tax claim must be verified again against current law, with the source 
 
 ## 9. Working rules
 
+- Learning: `docs/LEARNING-LOG.md` holds what was learned from official Google, YouTube and Instagram guidance (18 Nov 2026) and the nine changes it brought to the skill: brand named by voice in the first 5 s, two shots in the first 5 s, CTA said and shown, a send test in the brief, platform metrics at step 0, trial reels, a music licence rule, problem-first titles, and renderer checks (3-minute stop, late first cut, long reel with music).
+- Khaled does not appear on camera for now (decided 18 Nov 2026).
+
 - Show the estimated credits and get Khaled's approval before any generation. Never call a generate tool twice to retry.
 - Never publish or schedule without his explicit yes; show the exact text, account and time first.
 - Publishing paths that worked: Instagram through Claude in Chrome (the profile there is signed in to Instagram); YouTube through Metricool with the video hosted at a public URL (it was briefly hosted on khsaif.com through the Hostinger connector, then deleted). The Chrome profile that Claude controls is signed in to the personal Google account, not saif@khsaif.com.
