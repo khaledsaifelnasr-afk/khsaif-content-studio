@@ -26,7 +26,7 @@ Best posting time from Metricool (Instagram): around 10:00 Dubai time, strongest
 
 Connected on Khaled's account: ElevenLabs (custom connector, voice, music, sound effects, images, video, avatars, transcription), Unsplash (real photos; email confirmed), Metricool, Canva (video generation needs a paid Canva plan), Adobe for creativity, HyperFrames (HeyGen), Firecrawl, Figma, Make, Brandfetch, Microsoft 365, Hostinger. Local: Playwright MCP on Edge (auto-updates to the latest version on each start), Node.js 26, Remotion through the skill template, Chrome for rendering.
 
-- **Magnific** was added as a custom connector but never appeared in sessions. The chain skips it.
+- **Magnific** was added as a custom connector but never appeared in sessions. Dropped from the chain on 18 Nov 2026; Adobe Stock took its place as the second choice for visuals.
 - **Not used, by decision:** Qwen video (terms: private and non-commercial use only), clips from transitionalhooks.com (personal non-commercial use only; ideas only), Artlist (declined; same models as ElevenLabs at extra cost), Shutterstock (offered, not connected).
 - **Cloud sessions:** whether every connector works in the cloud has not been tested yet. Check with the connectors status tool first.
 
@@ -46,7 +46,7 @@ Location: `.claude/skills/reel-studio/` in this repository. On Khaled's PC `C:\U
 | 5 | Folder `Reels/<yyyy-mm-dd-slug>/assets/` | |
 | 6 | Voice | ElevenLabs |
 | 7 | Word timings (captions) | ElevenLabs transcription (free) |
-| 8 | Visuals: Unsplash, then Magnific, then Adobe stock, then ElevenLabs | |
+| 8 | Visuals: Unsplash, then Adobe stock, then ElevenLabs | |
 | 9 | Screen captures | Playwright |
 | 9b | Motion-graphic clips | HyperFrames (spends HeyGen credits, no free estimate) |
 | 10 | Music and sound effects, `reel.json` | ElevenLabs |
@@ -113,7 +113,7 @@ Every new tax claim must be verified again against current law, with the source 
 1. ~~Late filing penalty reel~~: cancelled by Khaled on 18 Nov 2026. The stamp scene will not be rebuilt and no cover is needed. Its local folder on his PC can be deleted or kept as an archive.
 2. Music on the published intro came from the old video; its licence was never checked.
 3. An older Short with the old brand may still be on the firm YouTube channel (`kj7Neu3RK-A`); Khaled may hide it.
-4. **Magnific:** not in the claude.ai connector directory and no longer among the installed connectors (checked 18 Nov 2026). Khaled asked to try setting it up again and, if that fails, choose a different tool. See section 10.
+4. ~~Magnific~~: not in the connector directory or among the installed connectors (18 Nov 2026). Khaled approved dropping it: visuals now go Unsplash → Adobe Stock → ElevenLabs. Kling (video) may be added later if Khaled subscribes. ElevenLabs still needs reconnecting with full access so the credit balance can be read.
 5. The brand reference files of the website (`khsaif Website/handoffs/`, `PROJECT.md`) are on Khaled's PC only, not in this repository. A cloud session has the skill's `brand/` folder (guideline PDF, closing clips, mark, tick) but not those files.
 
 ## 9. Working rules
