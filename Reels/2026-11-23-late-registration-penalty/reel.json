@@ -1,0 +1,592 @@
+{
+ "direction": "ltr",
+ "voice": "voice.mp3",
+ "music": "music.mp3",
+ "musicVolume": 0.2,
+ "scenes": [
+  {
+   "type": "visual",
+   "start": 0,
+   "end": 2.24,
+   "src": "hook.jpg",
+   "text": "AED 10,000 fine"
+  },
+  {
+   "type": "card",
+   "start": 2.24,
+   "end": 4.72,
+   "text": "For one form you didn't submit",
+   "kicker": "Registered auditor No. 5727"
+  },
+  {
+   "type": "card",
+   "start": 4.72,
+   "end": 6.4,
+   "text": "You may not have to pay it"
+  },
+  {
+   "type": "timeline",
+   "start": 6.4,
+   "end": 10.88,
+   "steps": [
+    {
+     "date": "Mar 2024+",
+     "label": "Company set up"
+    },
+    {
+     "date": "+3 months",
+     "label": "Register for Corporate Tax"
+    }
+   ]
+  },
+  {
+   "type": "card",
+   "start": 10.88,
+   "end": 15.04,
+   "text": "Register within",
+   "keyValue": "3 months",
+   "kicker": "of incorporation",
+   "icon": "tax"
+  },
+  {
+   "type": "counter",
+   "start": 15.04,
+   "end": 18.12,
+   "from": 0,
+   "to": 10000,
+   "prefix": "AED",
+   "text": "Late registration penalty"
+  },
+  {
+   "type": "law",
+   "start": 18.12,
+   "end": 20.36,
+   "source": "Cabinet Decision No. 75 of 2023, as amended, item 14",
+   "text": "Failure to submit a Corporate Tax registration application on time: AED 10,000"
+  },
+  {
+   "type": "visual",
+   "start": 20.36,
+   "end": 24.0,
+   "src": "waiver.jpg",
+   "text": "Waived, or refunded"
+  },
+  {
+   "type": "card",
+   "start": 24.0,
+   "end": 26.2,
+   "text": "File your first tax return"
+  },
+  {
+   "type": "timeline",
+   "start": 26.2,
+   "end": 29.28,
+   "steps": [
+    {
+     "date": "Day 0",
+     "label": "First tax period ends"
+    },
+    {
+     "date": "+7 months",
+     "label": "Return filed: penalty waived"
+    }
+   ]
+  },
+  {
+   "type": "card",
+   "start": 29.28,
+   "end": 32.4,
+   "text": "Send your licence date on WhatsApp",
+   "kicker": "+971 50 957 0963"
+  }
+ ],
+ "captions": [
+  {
+   "text": "10,000",
+   "start": 0,
+   "end": 0.8,
+   "emphasis": true
+  },
+  {
+   "text": "dirhams.",
+   "start": 0.88,
+   "end": 1.64
+  },
+  {
+   "text": "That's",
+   "start": 1.84,
+   "end": 2.04
+  },
+  {
+   "text": "the",
+   "start": 2.08,
+   "end": 2.16
+  },
+  {
+   "text": "fine",
+   "start": 2.24,
+   "end": 2.48
+  },
+  {
+   "text": "for",
+   "start": 2.56,
+   "end": 2.72
+  },
+  {
+   "text": "one",
+   "start": 2.8,
+   "end": 2.96
+  },
+  {
+   "text": "form",
+   "start": 3.12,
+   "end": 3.36
+  },
+  {
+   "text": "you",
+   "start": 3.44,
+   "end": 3.52
+  },
+  {
+   "text": "didn't",
+   "start": 3.6,
+   "end": 3.76
+  },
+  {
+   "text": "submit.",
+   "start": 4,
+   "end": 4.48
+  },
+  {
+   "text": "But",
+   "start": 4.72,
+   "end": 4.8
+  },
+  {
+   "text": "you",
+   "start": 4.84,
+   "end": 4.88
+  },
+  {
+   "text": "may",
+   "start": 4.96,
+   "end": 5.04
+  },
+  {
+   "text": "not",
+   "start": 5.12,
+   "end": 5.2
+  },
+  {
+   "text": "have",
+   "start": 5.28,
+   "end": 5.36
+  },
+  {
+   "text": "to",
+   "start": 5.44,
+   "end": 5.52
+  },
+  {
+   "text": "pay",
+   "start": 5.6,
+   "end": 5.76
+  },
+  {
+   "text": "it.",
+   "start": 5.84,
+   "end": 6.2
+  },
+  {
+   "text": "If",
+   "start": 6.4,
+   "end": 6.56
+  },
+  {
+   "text": "your",
+   "start": 6.64,
+   "end": 6.72
+  },
+  {
+   "text": "UAE",
+   "start": 6.8,
+   "end": 7.2
+  },
+  {
+   "text": "company",
+   "start": 7.28,
+   "end": 7.6
+  },
+  {
+   "text": "was",
+   "start": 7.68,
+   "end": 7.84
+  },
+  {
+   "text": "set",
+   "start": 7.92,
+   "end": 8
+  },
+  {
+   "text": "up",
+   "start": 8.08,
+   "end": 8.32
+  },
+  {
+   "text": "on",
+   "start": 8.44,
+   "end": 8.56
+  },
+  {
+   "text": "or",
+   "start": 8.64,
+   "end": 8.8
+  },
+  {
+   "text": "after",
+   "start": 8.88,
+   "end": 9.2
+  },
+  {
+   "text": "March",
+   "start": 9.28,
+   "end": 9.52
+  },
+  {
+   "text": "2024,",
+   "start": 9.6,
+   "end": 10.8
+  },
+  {
+   "text": "you",
+   "start": 10.88,
+   "end": 11.04
+  },
+  {
+   "text": "must",
+   "start": 11.16,
+   "end": 11.28
+  },
+  {
+   "text": "register",
+   "start": 11.36,
+   "end": 11.76
+  },
+  {
+   "text": "for",
+   "start": 11.8,
+   "end": 11.84
+  },
+  {
+   "text": "Corporate",
+   "start": 11.92,
+   "end": 12.24
+  },
+  {
+   "text": "Tax",
+   "start": 12.32,
+   "end": 12.56
+  },
+  {
+   "text": "within",
+   "start": 12.64,
+   "end": 12.96
+  },
+  {
+   "text": "3",
+   "start": 13.04,
+   "end": 13.28,
+   "emphasis": true
+  },
+  {
+   "text": "months",
+   "start": 13.36,
+   "end": 13.6
+  },
+  {
+   "text": "of",
+   "start": 13.68,
+   "end": 13.72
+  },
+  {
+   "text": "incorporation.",
+   "start": 13.76,
+   "end": 14.8
+  },
+  {
+   "text": "Miss",
+   "start": 15.04,
+   "end": 15.2
+  },
+  {
+   "text": "it,",
+   "start": 15.28,
+   "end": 15.6
+  },
+  {
+   "text": "and",
+   "start": 15.64,
+   "end": 15.68
+  },
+  {
+   "text": "the",
+   "start": 15.76,
+   "end": 15.8
+  },
+  {
+   "text": "penalty",
+   "start": 15.84,
+   "end": 16.24
+  },
+  {
+   "text": "is",
+   "start": 16.32,
+   "end": 16.48
+  },
+  {
+   "text": "10,000",
+   "start": 16.56,
+   "end": 17.28,
+   "emphasis": true
+  },
+  {
+   "text": "dirhams,",
+   "start": 17.36,
+   "end": 18
+  },
+  {
+   "text": "under",
+   "start": 18.12,
+   "end": 18.24
+  },
+  {
+   "text": "Cabinet",
+   "start": 18.28,
+   "end": 18.56
+  },
+  {
+   "text": "Decision",
+   "start": 18.64,
+   "end": 19.04
+  },
+  {
+   "text": "75.",
+   "start": 19.12,
+   "end": 20.32
+  },
+  {
+   "text": "But",
+   "start": 20.36,
+   "end": 20.4
+  },
+  {
+   "text": "the",
+   "start": 20.44,
+   "end": 20.48
+  },
+  {
+   "text": "FTA",
+   "start": 20.56,
+   "end": 21.04
+  },
+  {
+   "text": "waives",
+   "start": 21.12,
+   "end": 21.36,
+   "emphasis": true
+  },
+  {
+   "text": "it,",
+   "start": 21.44,
+   "end": 21.76
+  },
+  {
+   "text": "and",
+   "start": 21.84,
+   "end": 21.92
+  },
+  {
+   "text": "refunds",
+   "start": 22.04,
+   "end": 22.4,
+   "emphasis": true
+  },
+  {
+   "text": "it",
+   "start": 22.48,
+   "end": 22.56
+  },
+  {
+   "text": "if",
+   "start": 22.64,
+   "end": 22.72
+  },
+  {
+   "text": "you've",
+   "start": 22.773,
+   "end": 22.88
+  },
+  {
+   "text": "already",
+   "start": 23.04,
+   "end": 23.2
+  },
+  {
+   "text": "paid,",
+   "start": 23.36,
+   "end": 23.92
+  },
+  {
+   "text": "when",
+   "start": 24,
+   "end": 24.08
+  },
+  {
+   "text": "you",
+   "start": 24.16,
+   "end": 24.24
+  },
+  {
+   "text": "file",
+   "start": 24.36,
+   "end": 24.48
+  },
+  {
+   "text": "your",
+   "start": 24.6,
+   "end": 24.72
+  },
+  {
+   "text": "first",
+   "start": 24.84,
+   "end": 24.96
+  },
+  {
+   "text": "tax",
+   "start": 25.04,
+   "end": 25.2
+  },
+  {
+   "text": "return",
+   "start": 25.28,
+   "end": 25.68
+  },
+  {
+   "text": "within",
+   "start": 25.88,
+   "end": 26.08
+  },
+  {
+   "text": "7",
+   "start": 26.2,
+   "end": 26.32,
+   "emphasis": true
+  },
+  {
+   "text": "months",
+   "start": 26.4,
+   "end": 26.8
+  },
+  {
+   "text": "after",
+   "start": 26.92,
+   "end": 27.04
+  },
+  {
+   "text": "your",
+   "start": 27.12,
+   "end": 27.28
+  },
+  {
+   "text": "first",
+   "start": 27.4,
+   "end": 27.52
+  },
+  {
+   "text": "tax",
+   "start": 27.6,
+   "end": 27.76
+  },
+  {
+   "text": "period",
+   "start": 27.92,
+   "end": 28.24
+  },
+  {
+   "text": "ends.",
+   "start": 28.32,
+   "end": 29.2
+  },
+  {
+   "text": "Send",
+   "start": 29.28,
+   "end": 29.36
+  },
+  {
+   "text": "me",
+   "start": 29.4,
+   "end": 29.44
+  },
+  {
+   "text": "your",
+   "start": 29.52,
+   "end": 29.6
+  },
+  {
+   "text": "licence",
+   "start": 29.8,
+   "end": 30
+  },
+  {
+   "text": "date",
+   "start": 30.08,
+   "end": 30.24
+  },
+  {
+   "text": "on",
+   "start": 30.28,
+   "end": 30.32
+  },
+  {
+   "text": "WhatsApp,",
+   "start": 30.4,
+   "end": 30.96,
+   "emphasis": true
+  },
+  {
+   "text": "and",
+   "start": 31,
+   "end": 31.04
+  },
+  {
+   "text": "I'll",
+   "start": 31.12,
+   "end": 31.2
+  },
+  {
+   "text": "tell",
+   "start": 31.28,
+   "end": 31.36
+  },
+  {
+   "text": "you",
+   "start": 31.4,
+   "end": 31.44
+  },
+  {
+   "text": "where",
+   "start": 31.52,
+   "end": 31.6
+  },
+  {
+   "text": "you",
+   "start": 31.68,
+   "end": 31.76
+  },
+  {
+   "text": "stand.",
+   "start": 31.92,
+   "end": 32.32
+  }
+ ]
+}
