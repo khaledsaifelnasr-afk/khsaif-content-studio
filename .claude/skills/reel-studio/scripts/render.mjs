@@ -2,7 +2,7 @@
 // Expects <reel-folder>/reel.json and <reel-folder>/assets/.
 // Writes <reel-folder>/reel.mp4 and one review frame per scene in <reel-folder>/qa/.
 import {execFileSync} from 'node:child_process';
-import {copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
+import {copyFileSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync} from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -124,6 +124,14 @@ execFileSync(
   ],
   {cwd: template, stdio: 'inherit'},
 );
+
+// Master the mix to -14 LUFS (the level Instagram and YouTube play at), peaks under -1.5 dB.
+const mastered = path.join(reelDir, '.reel.mastered.mp4');
+run([
+  'ffmpeg', '-y', '-v', 'error', '-i', output, '-c:v', 'copy',
+  '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11', '-c:a', 'aac', '-b:a', '192k', mastered,
+]);
+renameSync(mastered, output);
 
 const qa = path.join(reelDir, 'qa');
 mkdirSync(qa, {recursive: true});

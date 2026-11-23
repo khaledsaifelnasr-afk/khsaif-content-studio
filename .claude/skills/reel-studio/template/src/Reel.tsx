@@ -45,12 +45,15 @@ const CLAMP = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 export type Step = {date: string; label: string};
 
-// Brand backgrounds for text scenes, all from the guideline's gradients and supergraphic.
-export const BG_VARIANTS = ['glow', 'rings', 'grid', 'gradient', 'midnight'] as const;
-export type Background = (typeof BG_VARIANTS)[number];
+// Brand backgrounds for text scenes, in the guideline's colours only (Midnight, Steel, navy gradients).
+// The 2026-11-23 set rotates by default; the first set stays available by name.
+export const BG_VARIANTS = ['aurora', 'beams', 'dots', 'waves', 'columns'] as const;
+export const BG_CLASSIC = ['glow', 'rings', 'grid', 'gradient', 'midnight'] as const;
+export type Background = (typeof BG_VARIANTS)[number] | (typeof BG_CLASSIC)[number];
 
 export type Scene = {
-  type: 'visual' | 'screen' | 'card' | 'counter' | 'timeline' | 'law' | 'list';
+  // hook: an animated opening, a number counting up in gold with a stamp (label) slamming in.
+  type: 'hook' | 'visual' | 'screen' | 'card' | 'counter' | 'timeline' | 'law' | 'list';
   start: number;
   end: number;
   src?: string;
@@ -281,8 +284,131 @@ const RingPattern = ({quiet}: {quiet: boolean}) => {
   );
 };
 
+// Slow drifting light pools in navy, like light moving across glass.
+const Aurora = () => {
+  const frame = useCurrentFrame();
+  const a = frame / 90;
+  const p1 = [30 + 18 * Math.sin(a), 30 + 10 * Math.cos(a * 0.8)];
+  const p2 = [72 + 14 * Math.cos(a * 0.7), 68 + 12 * Math.sin(a * 0.9)];
+  const p3 = [50 + 20 * Math.sin(a * 0.5 + 2), 50 + 16 * Math.cos(a * 0.6 + 1)];
+  return (
+    <AbsoluteFill
+      style={{
+        background: `radial-gradient(circle at ${p1[0]}% ${p1[1]}%, rgba(30,74,110,0.85) 0%, rgba(13,27,42,0) 42%), radial-gradient(circle at ${p2[0]}% ${p2[1]}%, rgba(26,58,88,0.9) 0%, rgba(13,27,42,0) 46%), radial-gradient(circle at ${p3[0]}% ${p3[1]}%, rgba(62,90,117,0.35) 0%, rgba(13,27,42,0) 38%), ${MIDNIGHT}`,
+      }}
+    />
+  );
+};
+
+// Soft diagonal light beams sweeping across.
+const Beams = () => {
+  const frame = useCurrentFrame();
+  const beams = [
+    [-300, 260, 0.12],
+    [200, 140, 0.09],
+    [620, 320, 0.11],
+  ];
+  return (
+    <AbsoluteFill style={{backgroundColor: MIDNIGHT, overflow: 'hidden'}}>
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, #0D1B2A 0%, #13263A 100%)'}} />
+      {beams.map(([x, w, o], i) => (
+        <div
+          key={i}
+          style={{
+            position: 'absolute',
+            top: -600,
+            left: x + interpolate(frame, [0, 300], [0, 260 + i * 60]),
+            width: w,
+            height: 3200,
+            rotate: '28deg',
+            background: `linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,${o}) 50%, rgba(255,255,255,0) 100%)`,
+          }}
+        />
+      ))}
+    </AbsoluteFill>
+  );
+};
+
+// A drifting dot field, darker at the edges.
+const Dots = ({quiet}: {quiet: boolean}) => {
+  const frame = useCurrentFrame();
+  return (
+    <AbsoluteFill style={{backgroundColor: MIDNIGHT}}>
+      <AbsoluteFill
+        style={{
+          backgroundImage: 'radial-gradient(rgba(90,130,165,0.75) 3px, transparent 3.5px)',
+          backgroundSize: '48px 48px',
+          backgroundPosition: `${interpolate(frame, [0, 300], [0, 48])}px ${interpolate(frame, [0, 300], [0, -96])}px`,
+          opacity: quiet ? 0.45 : 0.9,
+        }}
+      />
+      <AbsoluteFill
+        style={{background: 'radial-gradient(ellipse at 50% 45%, rgba(13,27,42,0) 20%, rgba(13,27,42,0.95) 75%)'}}
+      />
+    </AbsoluteFill>
+  );
+};
+
+// Flowing contour lines, like a market chart drawn softly.
+const Waves = () => {
+  const frame = useCurrentFrame();
+  const lines = Array.from({length: 7}, (_, i) => i);
+  const path = (i: number) => {
+    const base = 1180 + i * 70;
+    const amp = 40 + i * 8;
+    const phase = frame / 40 + i * 0.6;
+    let d = `M -20 ${base}`;
+    for (let x = -20; x <= 1100; x += 40) {
+      d += ` L ${x} ${(base + amp * Math.sin(x / 180 + phase)).toFixed(1)}`;
+    }
+    return d;
+  };
+  return (
+    <AbsoluteFill style={{background: `linear-gradient(180deg, ${MIDNIGHT} 0%, #102338 100%)`}}>
+      <svg viewBox="0 0 1080 1920" style={{position: 'absolute', inset: 0, width: '100%', height: '100%'}}>
+        {lines.map((i) => (
+          <path key={i} d={path(i)} fill="none" stroke={STEEL} strokeWidth={3} opacity={0.3 + i * 0.08} />
+        ))}
+      </svg>
+    </AbsoluteFill>
+  );
+};
+
+// A quiet bar chart rising along the bottom edge.
+const Columns = () => {
+  const frame = useCurrentFrame();
+  const heights = [220, 320, 260, 420, 360, 520, 460, 620, 560];
+  return (
+    <AbsoluteFill style={{background: `linear-gradient(180deg, ${MIDNIGHT} 0%, #12273C 100%)`}}>
+      {heights.map((h, i) => {
+        const grow = interpolate(frame, [i * 2, i * 2 + 24], [0.35, 1], {...CLAMP, easing: OUT});
+        const breathe = 1 + 0.04 * Math.sin(frame / 25 + i);
+        return (
+          <div
+            key={i}
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 40 + i * 112,
+              width: 84,
+              height: h * grow * breathe,
+              borderRadius: '10px 10px 0 0',
+              background: 'linear-gradient(180deg, rgba(62,90,117,0.6) 0%, rgba(62,90,117,0.12) 100%)',
+            }}
+          />
+        );
+      })}
+    </AbsoluteFill>
+  );
+};
+
 const BrandBackground = ({bg, quiet}: {bg: Background; quiet: boolean}) => {
   const frame = useCurrentFrame();
+  if (bg === 'aurora') return <Aurora />;
+  if (bg === 'beams') return <Beams />;
+  if (bg === 'dots') return <Dots quiet={quiet} />;
+  if (bg === 'waves') return <Waves />;
+  if (bg === 'columns') return <Columns />;
   if (bg === 'gradient') {
     return (
       <AbsoluteFill
@@ -353,6 +479,102 @@ const Panel = ({
     {children}
   </AbsoluteFill>
 );
+
+// Animated opening: the number races up in gold, then a white stamp slams in with a shake and a flash.
+const Hook = ({scene, direction}: {scene: Scene; direction: Direction}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const slam = Math.round(0.75 * fps);
+  const count = interpolate(frame, [2, slam - 2], [scene.from ?? 0, scene.to ?? 0], {
+    ...CLAMP,
+    easing: Easing.out(Easing.cubic),
+  });
+  const shake =
+    frame >= slam && frame < slam + 9
+      ? Math.sin(frame * 2.9) * interpolate(frame, [slam, slam + 9], [22, 0], CLAMP)
+      : 0;
+  return (
+    <AbsoluteFill style={{backgroundColor: MIDNIGHT, translate: `${shake}px ${shake * 0.5}px`}}>
+      <BrandBackground bg={scene.bg ?? 'beams'} quiet={false} />
+      <AbsoluteFill
+        style={{
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '300px 60px 520px',
+          textAlign: 'center',
+        }}
+      >
+        <div
+          style={{
+            fontFamily: numberFont,
+            color: WHITE,
+            fontSize: 70,
+            fontWeight: 700,
+            letterSpacing: '0.14em',
+            opacity: interpolate(frame, [0, 4], [0, 1], CLAMP),
+          }}
+        >
+          {scene.prefix ?? 'AED'}
+        </div>
+        <div
+          style={{
+            direction: 'ltr',
+            fontFamily: numberFont,
+            color: GOLD,
+            fontSize: 250,
+            fontWeight: 700,
+            lineHeight: 1.05,
+            scale: interpolate(frame, [0, 10, slam, slam + 4], [0.8, 1, 1, 1.06], {...CLAMP, easing: OUT}),
+          }}
+        >
+          {Math.round(count).toLocaleString('en-US')}
+        </div>
+        {scene.label ? (
+          <div
+            style={{
+              marginTop: 70,
+              direction,
+              fontFamily: headingFont(direction),
+              color: WHITE,
+              fontSize: direction === 'ltr' ? 92 : 96,
+              fontWeight: 700,
+              lineHeight: direction === 'ltr' ? 1.2 : LINE_HEIGHT_AR,
+              letterSpacing: direction === 'ltr' ? '0.1em' : 0,
+              padding: '16px 52px',
+              border: `9px solid ${WHITE}`,
+              borderRadius: 18,
+              rotate: '-7deg',
+              scale: interpolate(frame, [slam, slam + 5], [2.6, 1], {...CLAMP, easing: OUT}),
+              opacity: interpolate(frame, [slam, slam + 2], [0, 1], CLAMP),
+            }}
+          >
+            {scene.label}
+          </div>
+        ) : null}
+        {scene.text ? (
+          <div
+            style={{
+              marginTop: 60,
+              direction,
+              fontFamily: headingFont(direction),
+              color: WHITE,
+              fontSize: 60,
+              fontWeight: 700,
+              lineHeight: direction === 'ltr' ? 1.3 : LINE_HEIGHT_AR,
+              opacity: interpolate(frame, [slam + 6, slam + 12], [0, 1], CLAMP),
+            }}
+          >
+            {scene.text}
+          </div>
+        ) : null}
+      </AbsoluteFill>
+      <AbsoluteFill
+        style={{backgroundColor: WHITE, opacity: interpolate(frame, [slam, slam + 1, slam + 7], [0, 0.4, 0], CLAMP)}}
+      />
+    </AbsoluteFill>
+  );
+};
 
 const Counter = ({scene, direction}: {scene: Scene; direction: Direction}) => {
   const frame = useCurrentFrame();
@@ -943,6 +1165,7 @@ export const Reel = (props: ReelProps) => {
   const goldOnScreen =
     (current?.type === 'card' && Boolean(current.keyValue)) ||
     current?.type === 'counter' ||
+    current?.type === 'hook' ||
     current?.type === 'timeline' ||
     (current?.type === 'law' && Boolean(current.source)) ||
     // Icons, badges and charts are the screen's one cyan element, so captions stay white.
@@ -973,6 +1196,7 @@ export const Reel = (props: ReelProps) => {
             durationInFrames={i < props.scenes.length - 1 ? frames + CROSSFADE : frames}
           >
             <Enter first={i === 0}>
+              {scene.type === 'hook' ? <Hook scene={scene} direction={direction} /> : null}
               {scene.type === 'card' ? <Card scene={scene} direction={direction} /> : null}
               {scene.type === 'counter' ? <Counter scene={scene} direction={direction} /> : null}
               {scene.type === 'timeline' ? <Timeline scene={scene} direction={direction} /> : null}
